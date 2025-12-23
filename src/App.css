@@ -1,0 +1,832 @@
+/* =========================================================
+   1. CONFIGURATION GLOBALE
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --ai-cyan: #22d3ee;
+  --ai-blue: #3b82f6;
+  --bg-dark: #020617;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --nav-height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-dark);
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   2. SECTIONS — CENTRAGE ÉCRAN TOTAL
+========================================================= */
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* Centrage vertical */
+  align-items: center;
+  /* Centrage horizontal */
+  padding: 100px 20px;
+  scroll-margin-top: var(--nav-height);
+}
+
+/* =========================================================
+   3. CONTAINER CENTRAL (LARGEUR DE LECTURE)
+========================================================= */
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   4. NAVBAR (TECH GLASS)
+========================================================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--nav-height);
+  padding: 1.2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(34, 211, 238, 0.1);
+  z-index: 10000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--ai-cyan);
+  text-shadow: 0 0 10px var(--ai-cyan);
+}
+
+/* =========================================================
+   5. GRILLES (ABOUT / SKILLS / PROJECTS)
+========================================================= */
+.about-grid,
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  width: 100%;
+  align-items: center;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+/* =========================================================
+   6. SECTION ABOUT
+========================================================= */
+.about-text-zone {
+  text-align: left;
+}
+
+.mini-expertise-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--ai-cyan);
+  margin-bottom: 1rem;
+  transition: 0.3s;
+}
+
+.mini-expertise-card:hover {
+  transform: translateX(10px);
+  background: rgba(34, 211, 238, 0.05);
+}
+
+/* =========================================================
+   7. SECTION SKILLS (DATA / IA)
+========================================================= */
+.skill-label {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.progress-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+}
+
+.progress-fill-ai {
+  height: 100%;
+  background: var(--ai-cyan);
+  box-shadow: 0 0 15px var(--ai-cyan);
+  position: relative;
+  transition: width 1.5s cubic-bezier(0.1, 0.5, 0.2, 1);
+}
+
+.progress-fill-ai::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px white;
+}
+
+/* =========================================================
+   8. SECTION PROJECTS
+========================================================= */
+.project-card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: 0.4s;
+  text-align: left;
+}
+
+.project-card:hover {
+  border-color: var(--ai-cyan);
+  transform: translateY(-10px);
+}
+
+/* =========================================================
+   9. TEXTES & BOUTONS
+========================================================= */
+.highlight-purple {
+  background: linear-gradient(135deg, var(--ai-cyan), var(--ai-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.btn-space-ai {
+  padding: 0.9rem 2rem;
+  background: var(--ai-cyan);
+  color: var(--bg-dark);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.btn-space-ai:hover {
+  box-shadow: 0 0 20px var(--ai-cyan);
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   10. ANIMATIONS
+========================================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   11. RESPONSIVE
+========================================================= */
+@media (max-width: 900px) {
+
+  .about-grid,
+  .skills-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    padding: 1.2rem 2rem;
+  }
+
+  .about-text-zone {
+    text-align: center;
+  }
+}
+
+/* --- HERO SECTION STYLES --- */
+.hero-title {
+  font-size: 4.5rem;
+  /* Taille massive pour le nom */
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 800px;
+  /* Évite que le texte ne s'étale trop */
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* Positionnement du bouton sous le texte */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+/* Indicateur de scroll en bas de page */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+}
+
+/* --- SECTION ABOUT COMPACTE & CENTRÉE --- */
+.about-compact-container {
+  max-width: 950px;
+  /* Réduit la largeur pour un aspect plus pro */
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-grid-compact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Sépare bio et cartes en deux */
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.about-text-zone {
+  text-align: left;
+  /* Garde le texte de la bio lisible à gauche */
+}
+
+.about-headline-ai {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.about-description {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* --- BOUTONS --- */
+.about-btns {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* --- CARTES D'EXPERTISE DROITE --- */
+.mini-expertise-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--bg-card);
+  /* Utilise ton fond de carte IA */
+  padding: 1.2rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--ai-cyan);
+  margin-bottom: 1.2rem;
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+.mini-expertise-card:hover {
+  transform: translateX(10px);
+  /* Petit effet dynamique au survol */
+  background: rgba(34, 211, 238, 0.05);
+}
+
+.card-emoji {
+  font-size: 1.8rem;
+}
+
+.card-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+.card-info p {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 900px) {
+  .about-grid-compact {
+    grid-template-columns: 1fr;
+    /* Empile bio et cartes sur mobile */
+    text-align: center;
+  }
+
+  .about-text-zone {
+    text-align: center;
+  }
+
+  .about-btns {
+    justify-content: center;
+  }
+
+  .mini-expertise-card {
+    text-align: left;
+  }
+}
+
+/* --- SECTION SKILLS SYMÉTRIQUE --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Deux colonnes parfaites */
+  gap: 5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 3rem;
+}
+
+.category-header {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  color: var(--text-main);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.skills-list-ai {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.skill-box {
+  width: 100%;
+}
+
+.skill-label-ai {
+  display: flex;
+  justify-content: center;
+  /* Centre le texte au-dessus de la barre */
+  gap: 8px;
+  margin-bottom: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  /* Look code/data */
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.skill-percent {
+  color: var(--ai-cyan);
+}
+
+/* --- BARRES DE PROGRESSION NÉON --- */
+.progress-track-ai {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  position: relative;
+}
+
+.progress-fill-cyan {
+  height: 100%;
+  background: var(--ai-cyan);
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 0 15px var(--ai-cyan);
+  /* Lueur électrique */
+  transition: width 1.5s cubic-bezier(0.1, 0.5, 0.2, 1);
+}
+
+/* Point lumineux au bout de la data */
+.progress-fill-cyan::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fff, 0 0 20px var(--ai-cyan);
+}
+
+/* Responsive mobile */
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* --- GRILLE DE COMPÉTENCES À 3 COLONNES --- */
+.skills-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 colonnes pour Data, Software et Outils */
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  /* Légèrement plus large pour 3 colonnes */
+  margin-top: 3rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.category-header {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: var(--text-main);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skill-label-ai {
+  display: flex;
+  justify-content: center;
+  /* Centrage des noms au-dessus des barres */
+  gap: 8px;
+  margin-bottom: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+/* --- EFFET NÉON DATA --- */
+.progress-fill-cyan {
+  height: 100%;
+  background: var(--ai-cyan);
+  box-shadow: 0 0 15px var(--ai-cyan);
+  /* Lueur cyan */
+  position: relative;
+  transition: width 1.5s cubic-bezier(0.1, 0.5, 0.2, 1);
+}
+
+.progress-fill-cyan::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fff;
+}
+
+/* --- RESPONSIVE TABLETTE & MOBILE --- */
+@media (max-width: 1100px) {
+  .skills-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 colonnes sur tablette */
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid-3 {
+    grid-template-columns: 1fr;
+    /* 1 seule colonne sur mobile */
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   8. SECTION PROJECTS (Modifié pour images uniformes)
+========================================================= */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  /* Permet aux cartes de s'aligner sur la hauteur de la plus grande */
+  align-items: stretch;
+}
+
+.project-card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: 0.4s;
+  text-align: left;
+  /* Flexbox pour que la carte s'étire uniformément */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  border-color: var(--ai-cyan);
+  transform: translateY(-10px);
+}
+
+.project-image-container {
+  width: 100%;
+  /* Hauteur fixe plus grande pour rendre le bloc "plus gros" */
+  height: 280px;
+  /* Ajuste cette valeur selon tes préférences (ex: 250px, 300px) */
+  overflow: hidden;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
+  /* Fond pour les images transparentes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  /* C'EST LA CLÉ : L'image couvre toute la zone sans être déformée */
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.1);
+}
+
+/* Permet au contenu de remplir l'espace restant */
+.project-card-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  /* Le contenu prend tout l'espace disponible */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pousse les liens vers le bas pour qu'ils soient alignés */
+.project-links {
+  margin-top: auto;
+}
+
+/* ... (le reste des styles pour les tags, titres, etc. reste inchangé) */
+
+/* --- AJUSTEMENT POUR DÉCOLLER LE CONTENU --- */
+
+.project-card-content {
+  padding: 2rem 1.5rem;
+  /* Augmentation du padding haut/bas pour aérer */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  /* Ajoute un espace automatique entre TOUS les blocs internes (tags, titre, desc) */
+}
+
+.project-image-container {
+  width: 100%;
+  height: 280px;
+  /* Garde la taille imposante que tu souhaitais */
+  overflow: hidden;
+  border-bottom: 2px solid rgba(34, 211, 238, 0.3);
+  /* Ligne de séparation plus nette */
+}
+
+.project-tags {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+  /* Espace supplémentaire sous les tags */
+}
+
+.tag-pill {
+  background: rgba(34, 211, 238, 0.1);
+  color: var(--ai-cyan);
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+}
+
+.project-title-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  /* Géré par le 'gap' du parent */
+}
+
+.project-desc-text {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin: 0;
+  /* Géré par le 'gap' du parent */
+}
+
+.project-links {
+  margin-top: auto;
+  /* Pousse les liens tout en bas de la carte */
+  padding-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* --- SECTION CONTACT --- */
+.contact-subtitle {
+  color: var(--text-dim);
+  max-width: 600px;
+  margin: -2rem auto 3rem;
+  /* Ajusté pour coller au titre */
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  /* Deux colonnes asymétriques */
+  gap: 5rem;
+  width: 100%;
+  text-align: left;
+}
+
+/* --- INFOS DE GAUCHE --- */
+.contact-info-column h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  background: rgba(34, 211, 238, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+}
+
+.info-label {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.info-value {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* --- FORMULAIRE DE DROITE --- */
+.contact-form-card {
+  background: var(--bg-card);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.ai-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--ai-cyan);
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--ai-cyan);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* --- CORRECTIF TITRE ET SOUS-TITRE CONTACT --- */
+
+.about-main-title {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  /* Espace suffisant sous le titre principal */
+  text-align: center;
+  width: 100%;
+  line-height: 1.2;
+}
+
+.contact-subtitle {
+  color: var(--text-dim);
+  max-width: 650px;
+  margin: 0 auto 4rem;
+  /* Suppression du -2rem qui faisait tout coller */
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* On s'assure que le highlight ne casse pas la ligne */
+.highlight-purple {
+  white-space: nowrap;
+  /* Empêche le mot coloré de sauter à la ligne seul */
+}
