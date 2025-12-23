@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# 🌌 AI & Data Science Portfolio — Franck DUONG
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue sur le dépôt GitHub de mon portfolio professionnel. Ce projet est une **Single Page Application (SPA)** moderne conçue pour mettre en avant mon profil d'ingénieur spécialisé en Intelligence Artificielle et Science des Données.
 
-Currently, two official plugins are available:
+> **🎯 Objectif Professionnel :** Recherche d'un stage de **Data Scientist** débutant en **Avril 2026**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Aperçu du Projet
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Ce portfolio adopte une esthétique **"Cyber IA"** (fond sombre, accents cyan électrique) et suit une structure de navigation fluide inspirée du style PedroTech.
 
-## Expanding the ESLint configuration
+### 💎 Points Clés
+* **Centrage Absolu :** Utilisation d'un système de "Hero-Wrapper" pour garantir que chaque section est parfaitement centrée au milieu de l'écran du visiteur.
+* **Design Responsive :** Interface entièrement optimisée pour mobile, tablette et desktop.
+* **Visualisation de Compétences :** Barres de progression stylisées en néon pour illustrer mes maîtrises techniques.
+* **Architecture Propre :** Code modulaire découpé en sections React réutilisables.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Stack Technique
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* **Frontend :** React 18 & TypeScript
+* **Outil de Build :** Vite (pour un développement ultra-rapide)
+* **Style :** CSS3 Moderne (Flexbox, CSS Grid, Glassmorphism)
+* **Hébergement :** GitHub Pages / Vercel
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Structure du Répertoire
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```text
+src/
+├── components/     # Éléments d'interface (Navbar)
+├── sections/       # Sections principales (Home, About, Skills, Projects, Contact)
+├── data/           # Fichiers de données pour les projets et compétences
+├── assets/         # Images des projets et ressources visuelles
+└── App.css         # Thème global "Cyber IA" et animations
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+⚙️ Installation et Utilisation
+Prérequis
+Node.js (version 18 ou supérieure)
+
+npm ou yarn
+
+Étapes d'installation
+Cloner le dépôt :
+
+Bash
+
+git clone [https://github.com/Franckdng/mon-portfolio.git](https://github.com/Franckdng/mon-portfolio.git)
+Installer les dépendances :
+
+Bash
+
+npm install
+Lancer le serveur de développement :
+
+Bash
+
+npm run dev
+Générer la version de production :
+
+Bash
+
+npm run build
