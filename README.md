@@ -36,7 +36,7 @@ src/
 ├── data/           # Fichiers de données pour les projets et compétences
 ├── assets/         # Images des projets et ressources visuelles
 └── App.css         # Thème global "Cyber IA" et animations
-
+```
 ⚙️ Installation et Utilisation
 Prérequis
 Node.js (version 18 ou supérieure)
@@ -46,21 +46,17 @@ npm ou yarn
 Étapes d'installation
 Cloner le dépôt :
 
-Bash
-
 git clone [https://github.com/Franckdng/mon-portfolio.git](https://github.com/Franckdng/mon-portfolio.git)
+
 Installer les dépendances :
 
-Bash
-
 npm install
+
 Lancer le serveur de développement :
 
-Bash
-
 npm run dev
-Générer la version de production :
 
-Bash
+
+Générer la version de production :
 
 npm run build
